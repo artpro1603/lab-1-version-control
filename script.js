@@ -86,13 +86,11 @@ passwordInput.addEventListener("input", validatePassword);
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const isValid =
-        validateName() &&
-        validateSurname() &&
-        validateEmail() &&
-        validatePassword();
+    const isValid = [
+    validateName(),
+    validateSurname(),
+    validateEmail(),
+    validatePassword()
+].every(Boolean);
 
-    if (isValid) {
-        alert("Форма успішно відправлена!");
-    }
 })});
